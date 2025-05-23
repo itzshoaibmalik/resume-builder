@@ -130,7 +130,7 @@ body {
 /* Hero Section */
 .hero {
     padding: 120px 5% 60px;
-    background: var(--gradient-1);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     color: white;
     display: flex;
     align-items: center;
@@ -143,20 +143,23 @@ body {
 .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
-    pointer-events: none;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 50%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .hero-content {
     max-width: 600px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero-content::before {
@@ -211,8 +214,8 @@ body {
 .cta-button {
     display: inline-block;
     padding: 1.2rem 2.5rem;
-    background: var(--gradient-1);
-    color: var(--white);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 700;
@@ -220,27 +223,27 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .cta-button::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-    transform: scale(0);
-    transition: transform 0.5s ease;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .cta-button:hover::before {
-    transform: scale(1);
+    left: 100%;
 }
 
 .cta-button::after {
@@ -306,41 +309,43 @@ body {
 
 .feature-card {
     padding: 2.5rem;
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .feature-card::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--gradient-1);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     opacity: 0;
-    z-index: -1;
-    transition: opacity 0.3s ease;
-    border-radius: inherit;
+    transition: opacity 0.4s ease;
+    z-index: 0;
 }
 
 .feature-card:hover {
     transform: translateY(-15px) scale(1.02);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 .feature-card:hover::before {
-    opacity: 0.1;
+    opacity: 0.05;
 }
 
 .feature-card i {
-    position: relative;
-    display: inline-block;
-    transition: all 0.3s ease;
+    font-size: 3rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.4s ease;
 }
 
 .feature-card:hover i {
-    animation: bounce 1s infinite;
+    transform: scale(1.2) rotate(10deg);
 }
 
 .feature-card h3 {
@@ -394,18 +399,19 @@ body {
 .form-group textarea {
     position: relative;
     z-index: 1;
-    padding: 12px 15px;
-    border: 2px solid #e2e8f0;
+    padding: 1rem;
+    border: 2px solid rgba(0,0,0,0.1);
     border-radius: 10px;
     font-size: 1rem;
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.95);
     transition: all 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.1);
 }
 
 .form-group label {
@@ -475,7 +481,7 @@ body {
 
 /* Footer */
 footer {
-    background: var(--gradient-1);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     color: white;
     padding: 80px 5% 20px;
     position: relative;
@@ -527,7 +533,7 @@ footer::before {
 .social-links a {
     position: relative;
     display: inline-block;
-    color: var(--white);
+    color: white;
     font-size: 1.8rem;
     transition: all 0.3s ease;
 }
@@ -545,6 +551,12 @@ footer::before {
 
 .social-links a:hover::before {
     opacity: 0.2;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px) rotate(10deg);
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
 }
 
 .footer-bottom {
@@ -750,7 +762,6 @@ footer::before {
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-    box-shadow: var(--shadow-md);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -789,15 +800,14 @@ footer::before {
     z-index: 2;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    padding: 1.5rem;
-    text-align: center;
+    padding: 2rem;
     transform: translateY(0);
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .template-card:hover .template-info {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 .template-info h3 {
@@ -893,12 +903,13 @@ footer::before {
 }
 
 .testimonial-card {
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     padding: 2rem;
     position: relative;
     overflow: hidden;
     transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .testimonial-card::before {
@@ -908,7 +919,7 @@ footer::before {
     left: 0;
     width: 4px;
     height: 100%;
-    background: var(--gradient-1);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform 0.3s ease;
@@ -940,7 +951,7 @@ footer::before {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid transparent;
-    background: var(--gradient-1);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     background-clip: padding-box;
     transition: all 0.3s ease;
 }
@@ -1373,7 +1384,7 @@ a, button, .feature-card, .template-card, .testimonial-card {
     left: 0;
     width: 100%;
     height: 2px;
-    background: var(--gradient-1);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease;
@@ -1404,6 +1415,324 @@ a, button, .feature-card, .template-card, .testimonial-card {
 
 .social-links a:hover::before {
     opacity: 0.2;
+}
+
+/* Add smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add loading animation */
+@keyframes loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--primary);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
+}
+
+/* Add hover effect to all interactive elements */
+a, button, .feature-card, .template-card, .testimonial-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add focus styles for accessibility */
+:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Add active state styles */
+:active {
+    transform: scale(0.98);
+}
+
+/* Modern Glass Effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Hero Section */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 50%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    background: linear-gradient(to right, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Enhanced Feature Cards */
+.feature-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.feature-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.feature-card:hover::before {
+    opacity: 0.05;
+}
+
+.feature-card i {
+    font-size: 3rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.4s ease;
+}
+
+.feature-card:hover i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Enhanced Template Cards */
+.template-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.template-card img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.template-card:hover img {
+    transform: scale(1.1);
+}
+
+.template-info {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    transform: translateY(0);
+    transition: all 0.4s ease;
+}
+
+.template-card:hover .template-info {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Enhanced Buttons */
+.cta-button {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+/* Enhanced Form Elements */
+.form-group input,
+.form-group textarea {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Enhanced Testimonials */
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover::before {
+    transform: scaleY(1);
+}
+
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid transparent;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background-clip: padding-box;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-author img {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--primary);
+}
+
+/* Enhanced Navigation */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.nav-links a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Enhanced Footer */
+footer {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom left, transparent 49%, var(--primary-dark) 50%);
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px) rotate(10deg);
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
 }
 
 /* Add smooth scrolling */
