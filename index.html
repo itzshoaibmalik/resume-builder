@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Resume Builder</title>
+    <title>ResumePro - Professional Resume Builder</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -14,101 +14,167 @@
             <span>ResumePro</span>
         </div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
+            <li><a href="#home" class="active">Home</a></li>
             <li><a href="#features">Features</a></li>
-            <li><a href="#builder">Builder</a></li>
+            <li><a href="#templates">Templates</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="builder.html" class="cta-nav">Start Building</a></li>
         </ul>
     </nav>
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1 class="animate-text">Create Your Professional Resume</h1>
-            <p class="animate-text-delay">Stand out from the crowd with a beautifully crafted resume</p>
-            <a href="#builder" class="cta-button">Start Building Now</a>
+            <h1 class="animate-text">Craft Your Perfect Resume</h1>
+            <p class="animate-text-delay">Stand out from the crowd with a professionally designed resume that gets you noticed</p>
+            <div class="hero-buttons">
+                <a href="builder.html" class="cta-button">Start Building Now</a>
+                <a href="#templates" class="secondary-button">View Templates</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Resumes Created</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Success Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Templates</span>
+                </div>
+            </div>
         </div>
         <div class="hero-image">
-            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Resume Icon">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Professional Resume">
+            <div class="floating-elements">
+                <div class="float-item"><i class="fas fa-check-circle"></i></div>
+                <div class="float-item"><i class="fas fa-star"></i></div>
+                <div class="float-item"><i class="fas fa-trophy"></i></div>
+            </div>
         </div>
     </section>
 
     <section class="features" id="features">
-        <h2>Why Choose Our Resume Builder?</h2>
+        <h2>Why Choose ResumePro?</h2>
         <div class="features-grid">
             <div class="feature-card">
                 <i class="fas fa-magic"></i>
                 <h3>Professional Templates</h3>
-                <p>Choose from our collection of ATS-friendly templates</p>
+                <p>Choose from our collection of ATS-friendly templates designed by experts</p>
             </div>
             <div class="feature-card">
                 <i class="fas fa-bolt"></i>
                 <h3>Quick & Easy</h3>
-                <p>Create your resume in minutes, not hours</p>
+                <p>Create your resume in minutes with our intuitive builder</p>
             </div>
             <div class="feature-card">
                 <i class="fas fa-download"></i>
                 <h3>Instant Download</h3>
                 <p>Get your resume in PDF format instantly</p>
             </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>ATS Optimized</h3>
+                <p>Our templates are designed to pass through ATS systems</p>
+            </div>
         </div>
     </section>
 
-    <div class="container" id="builder">
-        <header>
-            <h1>Professional Resume Builder</h1>
-            <p>Create your resume easily and professionally</p>
-        </header>
-        <form class="resume-form">
-            <section>
-                <h2>Personal Information</h2>
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
+    <section class="templates" id="templates">
+        <h2>Professional Templates</h2>
+        <div class="templates-grid">
+            <div class="template-card">
+                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Modern Template">
+                <div class="template-info">
+                    <h3>Modern</h3>
+                    <p>Clean and professional design</p>
+                    <a href="builder.html" class="template-btn">Use Template</a>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+            </div>
+            <div class="template-card">
+                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Creative Template">
+                <div class="template-info">
+                    <h3>Creative</h3>
+                    <p>Stand out with unique design</p>
+                    <a href="builder.html" class="template-btn">Use Template</a>
                 </div>
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="template-card">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Executive Template">
+                <div class="template-info">
+                    <h3>Executive</h3>
+                    <p>Perfect for senior positions</p>
+                    <a href="builder.html" class="template-btn">Use Template</a>
                 </div>
-                <div class="form-group">
-                    <label for="address">Address</label>
-                    <input type="text" id="address" name="address">
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <i class="fas fa-user-edit"></i>
+                <h3>Fill Your Details</h3>
+                <p>Enter your professional information in our easy-to-use form</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <i class="fas fa-paint-brush"></i>
+                <h3>Choose Template</h3>
+                <p>Select from our collection of professional templates</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <i class="fas fa-file-download"></i>
+                <h3>Download</h3>
+                <p>Get your professionally formatted resume instantly</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"ResumePro helped me land my dream job! The templates are professional and easy to use."</p>
                 </div>
-            </section>
-            <section>
-                <h2>Education</h2>
-                <div class="form-group">
-                    <label for="education">Details</label>
-                    <textarea id="education" name="education" rows="3" placeholder="e.g. BSc in Computer Science, XYZ University, 2020"></textarea>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson">
+                    <div>
+                        <h4>Sarah Johnson</h4>
+                        <p>Software Engineer</p>
+                    </div>
                 </div>
-            </section>
-            <section>
-                <h2>Experience</h2>
-                <div class="form-group">
-                    <label for="experience">Details</label>
-                    <textarea id="experience" name="experience" rows="3" placeholder="e.g. Software Engineer at ABC Corp, 2021-2023"></textarea>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"The best resume builder I've used. Clean, professional, and gets results!"</p>
                 </div>
-            </section>
-            <section>
-                <h2>Skills</h2>
-                <div class="form-group">
-                    <label for="skills">List your skills</label>
-                    <input type="text" id="skills" name="skills" placeholder="e.g. HTML, CSS, JavaScript">
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Michael Chen">
+                    <div>
+                        <h4>Michael Chen</h4>
+                        <p>Marketing Manager</p>
+                    </div>
                 </div>
-            </section>
-            <section>
-                <h2>Projects</h2>
-                <div class="form-group">
-                    <label for="projects">Project Details</label>
-                    <textarea id="projects" name="projects" rows="3" placeholder="e.g. Portfolio Website, E-commerce App"></textarea>
-                </div>
-            </section>
-            <button type="submit" class="submit-btn">Download / Submit</button>
-        </form>
-    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Create Your Professional Resume?</h2>
+            <p>Join thousands of successful professionals who got their dream jobs with ResumePro</p>
+            <a href="builder.html" class="cta-button">Start Building Now</a>
+        </div>
+    </section>
 
     <footer id="contact">
         <div class="footer-content">
