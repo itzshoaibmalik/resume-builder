@@ -5,9 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Resume Builder</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-file-alt"></i>
+            <span>ResumePro</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#builder">Builder</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="animate-text">Create Your Professional Resume</h1>
+            <p class="animate-text-delay">Stand out from the crowd with a beautifully crafted resume</p>
+            <a href="#builder" class="cta-button">Start Building Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Resume Icon">
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <h2>Why Choose Our Resume Builder?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-magic"></i>
+                <h3>Professional Templates</h3>
+                <p>Choose from our collection of ATS-friendly templates</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Quick & Easy</h3>
+                <p>Create your resume in minutes, not hours</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-download"></i>
+                <h3>Instant Download</h3>
+                <p>Get your resume in PDF format instantly</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" id="builder">
         <header>
             <h1>Professional Resume Builder</h1>
             <p>Create your resume easily and professionally</p>
@@ -63,5 +109,30 @@
             <button type="submit" class="submit-btn">Download / Submit</button>
         </form>
     </div>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ResumePro</h3>
+                <p>Create professional resumes that stand out</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> support@resumepro.com</p>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ResumePro. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
